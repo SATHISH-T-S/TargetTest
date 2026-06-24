@@ -1,10 +1,11 @@
-// All phone cases data
+// All phone cases data with phone type
 const allCases = [
-    // All category
+    // iPhone cases
     {
         id: 1,
         name: 'Blue Marble',
         category: 'all',
+        phoneType: 'iPhone',
         description: 'Premium silicone case with soft touch finish',
         price: 499,
         emoji: '💙',
@@ -14,6 +15,7 @@ const allCases = [
         id: 2,
         name: 'Pink Flower',
         category: 'girls',
+        phoneType: 'iPhone',
         description: 'Beautiful pink case for girls collection',
         price: 599,
         emoji: '💝',
@@ -23,6 +25,7 @@ const allCases = [
         id: 3,
         name: 'Nature Green',
         category: 'all',
+        phoneType: 'Samsung',
         description: 'Eco-friendly green case with matte finish',
         price: 699,
         emoji: '🌿',
@@ -32,26 +35,27 @@ const allCases = [
         id: 4,
         name: 'Coral Vibes',
         category: 'all',
+        phoneType: 'Samsung',
         description: 'Soft touch coral case - most popular',
         price: 549,
         emoji: '🧡',
         color: 'linear-gradient(135deg, #FAECE7 0%, #F0997B 100%)'
     },
-    // Manual category
     {
         id: 5,
         name: 'Black Leather',
         category: 'manual',
+        phoneType: 'OnePlus',
         description: 'Handcrafted leather case for mobile phones',
         price: 899,
         emoji: '🖤',
         color: 'linear-gradient(135deg, #E8E8E8 0%, #4A4A4A 100%)'
     },
-    // Girls category
     {
         id: 6,
         name: 'Red Passion',
         category: 'girls',
+        phoneType: 'OnePlus',
         description: 'Vibrant red case designed for girls',
         price: 579,
         emoji: '❤️',
@@ -61,16 +65,17 @@ const allCases = [
         id: 7,
         name: 'Purple Dream',
         category: 'girls',
+        phoneType: 'Google Pixel',
         description: 'Elegant purple case for girls collection',
         price: 619,
         emoji: '💜',
         color: 'linear-gradient(135deg, #EEEDFE 0%, #AFA9EC 100%)'
     },
-    // Default category
     {
         id: 8,
         name: 'Gold Premium',
         category: 'default',
+        phoneType: 'iPhone',
         description: 'Premium gold case - most bought',
         price: 749,
         emoji: '✨',
@@ -80,6 +85,7 @@ const allCases = [
         id: 9,
         name: 'Teal Ocean',
         category: 'default',
+        phoneType: 'Samsung',
         description: 'Ocean inspired teal case - popular choice',
         price: 529,
         emoji: '🌊',
@@ -89,16 +95,17 @@ const allCases = [
         id: 10,
         name: 'Silver Metallic',
         category: 'default',
+        phoneType: 'Google Pixel',
         description: 'Metallic silver case - commonly bought',
         price: 649,
         emoji: '⚪',
         color: 'linear-gradient(135deg, #F0F0F0 0%, #C0C0C0 100%)'
     },
-    // Manual category
     {
         id: 11,
         name: 'Custom Blue',
         category: 'manual',
+        phoneType: 'OnePlus',
         description: 'Custom made blue case for phones',
         price: 799,
         emoji: '🎨',
@@ -108,6 +115,7 @@ const allCases = [
         id: 12,
         name: 'Handmade Pink',
         category: 'manual',
+        phoneType: 'Google Pixel',
         description: 'Handmade pink case for mobile devices',
         price: 849,
         emoji: '🌸',
@@ -115,10 +123,13 @@ const allCases = [
     }
 ];
 
+// Phone types list
+const phoneTypes = ['iPhone', 'Samsung', 'OnePlus', 'Google Pixel'];
+
 // Function to get cases by category
 function getCasesByCategory(category) {
     if (category === 'home') {
-        return allCases.slice(0, 4); // Show first 4 for home
+        return allCases.slice(0, 4);
     } else if (category === 'manual') {
         return allCases.filter(c => c.category === 'manual').slice(0, 4);
     } else if (category === 'default') {
@@ -127,6 +138,11 @@ function getCasesByCategory(category) {
         return allCases.filter(c => c.category === 'girls').slice(0, 4);
     }
     return [];
+}
+
+// Function to get cases by phone type
+function getCasesByPhoneType(phoneType) {
+    return allCases.filter(c => c.phoneType === phoneType).slice(0, 4);
 }
 
 // Page titles and descriptions
@@ -146,5 +162,9 @@ const pageInfo = {
     madebyme: {
         title: 'Made By Me - Girls Collection',
         description: 'Exclusively designed phone cases for girls'
+    },
+    phonetypes: {
+        title: 'Cases by Phone Type',
+        description: 'Find the perfect case for your phone brand'
     }
 };
