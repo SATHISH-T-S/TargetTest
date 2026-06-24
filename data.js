@@ -1,4 +1,4 @@
-// All phone cases data with phone type
+// All phone cases data with IMAGE URLs
 const allCases = [
     // iPhone cases
     {
@@ -8,7 +8,7 @@ const allCases = [
         phoneType: 'iPhone',
         description: 'Premium silicone case with soft touch finish',
         price: 499,
-        emoji: '💙',
+        image: 'https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #E6F1FB 0%, #85B7EB 100%)'
     },
     {
@@ -18,7 +18,7 @@ const allCases = [
         phoneType: 'iPhone',
         description: 'Beautiful pink case for girls collection',
         price: 599,
-        emoji: '💝',
+        image: 'https://images.unsplash.com/photo-1601296867352-e6f03e47a5da?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #FBEAF0 0%, #ED93B1 100%)'
     },
     {
@@ -28,7 +28,7 @@ const allCases = [
         phoneType: 'Samsung',
         description: 'Eco-friendly green case with matte finish',
         price: 699,
-        emoji: '🌿',
+        image: 'https://images.unsplash.com/photo-1592286927505-1fed6c3d8b12?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #EAF3DE 0%, #97C459 100%)'
     },
     {
@@ -38,7 +38,7 @@ const allCases = [
         phoneType: 'Samsung',
         description: 'Soft touch coral case - most popular',
         price: 549,
-        emoji: '🧡',
+        image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #FAECE7 0%, #F0997B 100%)'
     },
     {
@@ -48,7 +48,7 @@ const allCases = [
         phoneType: 'OnePlus',
         description: 'Handcrafted leather case for mobile phones',
         price: 899,
-        emoji: '🖤',
+        image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #E8E8E8 0%, #4A4A4A 100%)'
     },
     {
@@ -58,7 +58,7 @@ const allCases = [
         phoneType: 'OnePlus',
         description: 'Vibrant red case designed for girls',
         price: 579,
-        emoji: '❤️',
+        image: 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #FCEBEB 0%, #F09595 100%)'
     },
     {
@@ -68,7 +68,7 @@ const allCases = [
         phoneType: 'Google Pixel',
         description: 'Elegant purple case for girls collection',
         price: 619,
-        emoji: '💜',
+        image: 'https://images.unsplash.com/photo-1605559424843-9e4c3febda46?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #EEEDFE 0%, #AFA9EC 100%)'
     },
     {
@@ -78,7 +78,7 @@ const allCases = [
         phoneType: 'iPhone',
         description: 'Premium gold case - most bought',
         price: 749,
-        emoji: '✨',
+        image: 'https://images.unsplash.com/photo-1511636635265-623b0a43a329?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #FFF8DC 0%, #FFD700 100%)'
     },
     {
@@ -88,7 +88,7 @@ const allCases = [
         phoneType: 'Samsung',
         description: 'Ocean inspired teal case - popular choice',
         price: 529,
-        emoji: '🌊',
+        image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #E1F5EE 0%, #5DCAA5 100%)'
     },
     {
@@ -98,7 +98,7 @@ const allCases = [
         phoneType: 'Google Pixel',
         description: 'Metallic silver case - commonly bought',
         price: 649,
-        emoji: '⚪',
+        image: 'https://images.unsplash.com/photo-1592286927505-1fed6c3d8b12?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #F0F0F0 0%, #C0C0C0 100%)'
     },
     {
@@ -108,7 +108,7 @@ const allCases = [
         phoneType: 'OnePlus',
         description: 'Custom made blue case for phones',
         price: 799,
-        emoji: '🎨',
+        image: 'https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #B5D4F4 0%, #185FA5 100%)'
     },
     {
@@ -118,7 +118,7 @@ const allCases = [
         phoneType: 'Google Pixel',
         description: 'Handmade pink case for mobile devices',
         price: 849,
-        emoji: '🌸',
+        image: 'https://images.unsplash.com/photo-1601296867352-e6f03e47a5da?w=400&h=400&fit=crop',
         color: 'linear-gradient(135deg, #F4C0D1 0%, #D4537E 100%)'
     }
 ];
