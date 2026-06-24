@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Cases - E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>📱</span>
+                <h1>Phone Cases</h1>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-link active" data-page="home">Home</button>
+                <button class="nav-link" data-page="manual">Manual</button>
+                <button class="nav-link" data-page="default">Default</button>
+                <button class="nav-link" data-page="madebyme">Made By me</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="page-container">
+            <div class="page-header">
+                <h2 id="pageTitle">All Phone Cases</h2>
+                <p id="pageDescription">Browse our complete collection of premium phone cases</p>
+            </div>
+
+            <!-- CASES GRID -->
+            <div class="cases-grid" id="casesGrid">
+                <!-- Cases will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 Phone Cases. All rights reserved. | Made for Adobe Target Learning</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
