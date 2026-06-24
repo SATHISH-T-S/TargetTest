@@ -1,9 +1,11 @@
 // Store favorites in browser
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+let currentPhoneType = 'iPhone';
 
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
     setupNavigation();
+    setupPhoneTypeFilter();
     loadPage('home');
 });
 
@@ -23,17 +25,60 @@ function setupNavigation() {
     });
 }
 
+// Setup phone type filter buttons
+function setupPhoneTypeFilter() {
+    const phoneTypeButtons = document.querySelectorAll('.phone-type-btn');
+    
+    phoneTypeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            phoneTypeButtons.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            // Set current phone type
+            currentPhoneType = this.getAttribute('data-phone-type');
+            // Reload cases with selected phone type
+            loadPhoneTypesPage();
+        });
+    });
+}
+
 // Load page based on category
 function loadPage(page) {
-    // Update page title and description
+    // Show/hide phone type filter
+    const phoneTypeFilter = document.getElementById('phoneTypeFilter');
+    
+    if (page === 'phonetypes') {
+        phoneTypeFilter.style.display = 'block';
+        loadPhoneTypesPage();
+    } else {
+        phoneTypeFilter.style.display = 'none';
+        
+        // Update page title and description
+        const pageTitle = document.getElementById('pageTitle');
+        const pageDescription = document.getElementById('pageDescription');
+        
+        pageTitle.textContent = pageInfo[page].title;
+        pageDescription.textContent = pageInfo[page].description;
+        
+        // Get cases for this page
+        const cases = getCasesByCategory(page);
+        
+        // Display cases
+        displayCases(cases);
+    }
+}
+
+// Load phone types page
+function loadPhoneTypesPage() {
     const pageTitle = document.getElementById('pageTitle');
     const pageDescription = document.getElementById('pageDescription');
     
-    pageTitle.textContent = pageInfo[page].title;
-    pageDescription.textContent = pageInfo[page].description;
+    pageTitle.textContent = pageInfo.phonetypes.title;
+    pageDescription.textContent = pageInfo.phonetypes.description;
     
-    // Get cases for this page
-    const cases = getCasesByCategory(page);
+    // Get cases for selected phone type
+    const cases = getCasesByPhoneType(currentPhoneType);
     
     // Display cases
     displayCases(cases);
@@ -45,7 +90,7 @@ function displayCases(cases) {
     casesGrid.innerHTML = '';
     
     if (cases.length === 0) {
-        casesGrid.innerHTML = '<p class="no-cases">No cases available</p>';
+        casesGrid.innerHTML = '<p class="no-cases">No cases available for this phone type</p>';
         return;
     }
     
@@ -73,6 +118,9 @@ function createCaseCard(caseItem) {
         <div class="case-info">
             <h3 class="case-name">${caseItem.name}</h3>
             <p class="case-description">${caseItem.description}</p>
+            <div style="font-size: 12px; color: #64748b; margin-bottom: 0.5rem;">
+                For: <strong>${caseItem.phoneType}</strong>
+            </div>
             <div class="case-footer">
                 <span class="case-price">₹${caseItem.price}</span>
                 <button class="add-to-cart-btn" onclick="addToCart(${caseItem.id}, '${caseItem.name}', ${caseItem.price})">
@@ -112,7 +160,7 @@ function addToCart(caseId, caseName, price) {
     const message = `✅ Added "${caseName}" to cart!\nPrice: ₹${price}`;
     alert(message);
     
-    // You can extend this to save cart items to localStorage
+    // Save to localStorage
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     cartItems.push({
         id: caseId,
@@ -121,10 +169,4 @@ function addToCart(caseId, caseName, price) {
         quantity: 1
     });
     localStorage.setItem('cart', JSON.stringify(cartItems));
-}
-
-// Mobile menu toggle (optional for future enhancement)
-function toggleMobileMenu() {
-    const menu = document.querySelector('.nav-menu');
-    menu.classList.toggle('active');
 }
