@@ -19,6 +19,7 @@
                 <button class="nav-link" data-page="manual">Manual</button>
                 <button class="nav-link" data-page="default">Default</button>
                 <button class="nav-link" data-page="madebyme">Made By me</button>
+                <button class="nav-link" data-page="phonetypes">Phone Types</button>
             </div>
         </div>
     </nav>
@@ -29,6 +30,29 @@
             <div class="page-header">
                 <h2 id="pageTitle">All Phone Cases</h2>
                 <p id="pageDescription">Browse our complete collection of premium phone cases</p>
+            </div>
+
+            <!-- PHONE TYPE FILTER (only visible on phonetypes page) -->
+            <div id="phoneTypeFilter" class="phone-type-filter" style="display: none;">
+                <h3>Select Your Phone Type</h3>
+                <div class="phone-type-buttons">
+                    <button class="phone-type-btn active" data-phone-type="iPhone">
+                        <span class="phone-icon">📱</span>
+                        <span>iPhone</span>
+                    </button>
+                    <button class="phone-type-btn" data-phone-type="Samsung">
+                        <span class="phone-icon">📱</span>
+                        <span>Samsung</span>
+                    </button>
+                    <button class="phone-type-btn" data-phone-type="OnePlus">
+                        <span class="phone-icon">📱</span>
+                        <span>OnePlus</span>
+                    </button>
+                    <button class="phone-type-btn" data-phone-type="Google Pixel">
+                        <span class="phone-icon">🔍</span>
+                        <span>Google Pixel</span>
+                    </button>
+                </div>
             </div>
 
             <!-- CASES GRID -->
