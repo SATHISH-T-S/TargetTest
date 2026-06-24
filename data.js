@@ -8,7 +8,7 @@ const allCases = [
         phoneType: 'iPhone',
         description: 'Premium silicone case with soft touch finish',
         price: 499,
-        image: 'https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=400&h=400&fit=crop',
+        image: 'https://github.com/SATHISH-T-S/TargetTest/blob/86b4baa10c2fb4c397124da050095dd03a2222e2/Blue%20Mariene.webp',
         color: 'linear-gradient(135deg, #E6F1FB 0%, #85B7EB 100%)'
     },
     {
